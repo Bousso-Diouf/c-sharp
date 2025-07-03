@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MetierGestion.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MetierGestion.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Appartement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdresseAppartement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Capacite" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="Disponible" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdAppartement" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProprietaire" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTypeAppartement" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NombrePiece" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Proprietaire" nillable="true" type="tns:Proprietaire" />
+      <xs:element minOccurs="0" name="Surface" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="TypeAppartement" nillable="true" type="tns:TypeAppartement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Appartement" nillable="true" type="tns:Appartement" />
+  <xs:complexType name="Proprietaire">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Personne">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Appartements" nillable="true" type="tns:ArrayOfAppartement" />
+          <xs:element minOccurs="0" name="Ninea" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rccm" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Proprietaire" nillable="true" type="tns:Proprietaire" />
+  <xs:complexType name="Personne">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPersonne" type="xs:int" />
+      <xs:element minOccurs="0" name="NomPrenom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Personne" nillable="true" type="tns:Personne" />
+  <xs:complexType name="ArrayOfAppartement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Appartement" nillable="true" type="tns:Appartement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAppartement" nillable="true" type="tns:ArrayOfAppartement" />
+  <xs:complexType name="TypeAppartement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Appartements" nillable="true" type="tns:ArrayOfAppartement" />
+      <xs:element minOccurs="0" name="IdTypeAppartement" type="xs:int" />
+      <xs:element minOccurs="0" name="LibelleTypeAppartement" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TypeAppartement" nillable="true" type="tns:TypeAppartement" />
+  <xs:complexType name="Locataire">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Personne">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CNI" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Locataire" nillable="true" type="tns:Locataire" />
+  <xs:complexType name="Paiement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContratLocation" nillable="true" type="tns:ContratLocation" />
+      <xs:element minOccurs="0" name="DatePaiement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdContratLocation" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdModePaiement" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPaiement" type="xs:int" />
+      <xs:element minOccurs="0" name="ModePaiement" nillable="true" type="tns:ModePaiement" />
+      <xs:element minOccurs="0" name="Montant" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="NumeroFacture" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Paiement" nillable="true" type="tns:Paiement" />
+  <xs:complexType name="ContratLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Appartement" nillable="true" type="tns:Appartement" />
+      <xs:element minOccurs="0" name="DateCreation" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdAppartement" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdContrat" type="xs:int" />
+      <xs:element minOccurs="0" name="IdLocataire" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPaiement" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Locataire" nillable="true" type="tns:Locataire" />
+      <xs:element minOccurs="0" name="Montant" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Paiement" nillable="true" type="tns:Paiement" />
+      <xs:element minOccurs="0" name="Paiements" nillable="true" type="tns:ArrayOfPaiement" />
+      <xs:element minOccurs="0" name="statut" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContratLocation" nillable="true" type="tns:ContratLocation" />
+  <xs:complexType name="ArrayOfPaiement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Paiement" nillable="true" type="tns:Paiement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaiement" nillable="true" type="tns:ArrayOfPaiement" />
+  <xs:complexType name="ModePaiement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdModePaiement" type="xs:int" />
+      <xs:element minOccurs="0" name="LibelleModePaiement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Paiements" nillable="true" type="tns:ArrayOfPaiement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModePaiement" nillable="true" type="tns:ModePaiement" />
+  <xs:complexType name="AdminDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPersonne" type="xs:int" />
+      <xs:element minOccurs="0" name="Identifiant" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomPrenom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdminDTO" nillable="true" type="tns:AdminDTO" />
+</xs:schema>
