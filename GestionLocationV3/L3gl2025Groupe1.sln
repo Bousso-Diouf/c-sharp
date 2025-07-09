@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetierGestion", "MetierGest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIRestGestion", "APIRestGestion\APIRestGestion.csproj", "{E4815BB8-A94C-41A9-A5D3-05F17B41FEC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serWinGroupe1", "serWinGroupe1\serWinGroupe1.csproj", "{EDA0E9C8-81AC-4196-9F46-4551D8E144D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{E4815BB8-A94C-41A9-A5D3-05F17B41FEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4815BB8-A94C-41A9-A5D3-05F17B41FEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4815BB8-A94C-41A9-A5D3-05F17B41FEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA0E9C8-81AC-4196-9F46-4551D8E144D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA0E9C8-81AC-4196-9F46-4551D8E144D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA0E9C8-81AC-4196-9F46-4551D8E144D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA0E9C8-81AC-4196-9F46-4551D8E144D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
