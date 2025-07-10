@@ -1,0 +1,27 @@
+﻿# === Visual Studio ===
+.vs/
+*.user
+*.suo
+*.sln.docstates
+
+# === Build outputs ===
+bin/
+obj/
+packages/
+UpgradeLog.htm
+
+# === Crystal Reports ===
+Fichiers de sauvegarde Crystal Reports/
+
+# === Logs et fichiers temporaires ===
+*.log
+*.tmp
+*.bak
+*.cache
+*.pdb
+*.dbmdl
+*.VC.db
+*.ncb
+*.aps
+*.sdf
+*.opensdf
