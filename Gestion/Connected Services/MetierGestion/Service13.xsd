@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MetierGestion.Model.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MetierGestion.Model.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:51198/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/MetierGestion.Model" />
+  <xs:complexType name="AppartementDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdresseAppartement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Capacite" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="Disponible" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdAppartement" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProprietaire" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTypeAppartement" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LibelleTypeAppartement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomPrenomProprietaire" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombrePiece" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Surface" nillable="true" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppartementDTO" nillable="true" type="tns:AppartementDTO" />
+  <xs:complexType name="ArrayOfAppartementDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppartementDTO" nillable="true" type="tns:AppartementDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAppartementDTO" nillable="true" type="tns:ArrayOfAppartementDTO" />
+  <xs:complexType name="ArrayOfProprietaireDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProprietaireDTO" nillable="true" type="tns:ProprietaireDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProprietaireDTO" nillable="true" type="tns:ArrayOfProprietaireDTO" />
+  <xs:complexType name="ProprietaireDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPersonne" type="xs:int" />
+      <xs:element minOccurs="0" name="Ninea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomPrenom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rccm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProprietaireDTO" nillable="true" type="tns:ProprietaireDTO" />
+  <xs:complexType name="ArrayOfLocataireDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocataireDTO" nillable="true" type="tns:LocataireDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocataireDTO" nillable="true" type="tns:ArrayOfLocataireDTO" />
+  <xs:complexType name="LocataireDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPersonne" type="xs:int" />
+      <xs:element minOccurs="0" name="NomPrenom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocataireDTO" nillable="true" type="tns:LocataireDTO" />
+  <xs:complexType name="ContratLocationDTO">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MetierGestion.Model" minOccurs="0" name="Appartement" nillable="true" type="q1:Appartement" />
+      <xs:element minOccurs="0" name="DateCreation" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdAppartement" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdContrat" type="xs:int" />
+      <xs:element minOccurs="0" name="IdLocataire" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPaiement" nillable="true" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MetierGestion.Model" minOccurs="0" name="Locataire" nillable="true" type="q2:Locataire" />
+      <xs:element minOccurs="0" name="Montant" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MetierGestion.Model" minOccurs="0" name="Paiement" nillable="true" type="q3:Paiement" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MetierGestion.Model" minOccurs="0" name="Paiements" nillable="true" type="q4:ArrayOfPaiement" />
+      <xs:element minOccurs="0" name="statut" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContratLocationDTO" nillable="true" type="tns:ContratLocationDTO" />
+  <xs:complexType name="ArrayOfContratLocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContratLocationDTO" nillable="true" type="tns:ContratLocationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContratLocationDTO" nillable="true" type="tns:ArrayOfContratLocationDTO" />
+  <xs:complexType name="UtilisateurDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPersonne" type="xs:int" />
+      <xs:element minOccurs="0" name="Identifiant" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotDePasse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomPrenom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Statut" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UtilisateurDTO" nillable="true" type="tns:UtilisateurDTO" />
+  <xs:complexType name="ArrayOfUtilisateurDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UtilisateurDTO" nillable="true" type="tns:UtilisateurDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUtilisateurDTO" nillable="true" type="tns:ArrayOfUtilisateurDTO" />
+</xs:schema>

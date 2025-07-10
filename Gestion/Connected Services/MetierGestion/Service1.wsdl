@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51198/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51198/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51198/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MetierGestion" />
+      <xsd:import schemaLocation="http://localhost:51198/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MetierGestion.Model.DTO" />
+      <xsd:import schemaLocation="http://localhost:51198/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/MetierGestion.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddAppartement_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAppartement" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddAppartement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAppartementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateAppartement_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppartement" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateAppartement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppartementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteAppartement_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAppartement" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteAppartement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAppartementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppartementById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppartementById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppartementById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppartementByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeAppartement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeAppartement" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeAppartement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeAppartementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeProprietaires_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeProprietaires" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeProprietaires_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeProprietairesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AjouterProprietaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterProprietaire" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AjouterProprietaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterProprietaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModifierProprietaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierProprietaire" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModifierProprietaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierProprietaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SupprimerProprietaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerProprietaire" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SupprimerProprietaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerProprietaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppartementsByProprietaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppartementsByProprietaire" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppartementsByProprietaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppartementsByProprietaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeAppartement1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeAppartement1" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeAppartement1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeAppartement1Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeProprietaires_v1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeProprietaires_v1" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeProprietaires_v1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeProprietaires_v1Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeAppartement_v1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeAppartement_v1" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeAppartement_v1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeAppartement_v1Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeLocataires_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeLocataires" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeLocataires_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeLocatairesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AjouterLocataire_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterLocataire" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AjouterLocataire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterLocataireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModifierLocataire_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierLocataire" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModifierLocataire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierLocataireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SupprimerLocataire_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerLocataire" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SupprimerLocataire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerLocataireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AjouterContratLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterContratLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AjouterContratLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterContratLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModifierContratLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierContratLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ModifierContratLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierContratLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SupprimerContratLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerContratLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SupprimerContratLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerContratLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeContrats_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeContrats" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListeContrats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListeContratsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetContratById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContratById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetContratById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContratByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AjouterUtilisateur_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterUtilisateur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AjouterUtilisateur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterUtilisateurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUtilisateurs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtilisateurs" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUtilisateurs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtilisateursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUtilisateurByIdentifiant_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtilisateurByIdentifiant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUtilisateurByIdentifiant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtilisateurByIdentifiantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EstEmailUnique_InputMessage">
+    <wsdl:part name="parameters" element="tns:EstEmailUnique" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EstEmailUnique_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EstEmailUniqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EstIdentifiantUnique_InputMessage">
+    <wsdl:part name="parameters" element="tns:EstIdentifiantUnique" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EstIdentifiantUnique_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EstIdentifiantUniqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EstTelephoneUnique_InputMessage">
+    <wsdl:part name="parameters" element="tns:EstTelephoneUnique" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EstTelephoneUnique_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EstTelephoneUniqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerifierUtilisateur_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifierUtilisateur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerifierUtilisateur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifierUtilisateurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_WriteDataError_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteDataError" />
+  </wsdl:message>
+  <wsdl:message name="IService1_WriteDataError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteDataErrorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAppartement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddAppartement" message="tns:IService1_AddAppartement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddAppartementResponse" message="tns:IService1_AddAppartement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppartement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateAppartement" message="tns:IService1_UpdateAppartement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateAppartementResponse" message="tns:IService1_UpdateAppartement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppartement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteAppartement" message="tns:IService1_DeleteAppartement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteAppartementResponse" message="tns:IService1_DeleteAppartement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppartementById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAppartementById" message="tns:IService1_GetAppartementById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAppartementByIdResponse" message="tns:IService1_GetAppartementById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListeAppartement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListeAppartement" message="tns:IService1_GetListeAppartement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListeAppartementResponse" message="tns:IService1_GetListeAppartement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListeProprietaires">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListeProprietaires" message="tns:IService1_GetListeProprietaires_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListeProprietairesResponse" message="tns:IService1_GetListeProprietaires_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AjouterProprietaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AjouterProprietaire" message="tns:IService1_AjouterProprietaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AjouterProprietaireResponse" message="tns:IService1_AjouterProprietaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifierProprietaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ModifierProprietaire" message="tns:IService1_ModifierProprietaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ModifierProprietaireResponse" message="tns:IService1_ModifierProprietaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerProprietaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SupprimerProprietaire" message="tns:IService1_SupprimerProprietaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SupprimerProprietaireResponse" message="tns:IService1_SupprimerProprietaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppartementsByProprietaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAppartementsByProprietaire" message="tns:IService1_GetAppartementsByProprietaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAppartementsByProprietaireResponse" message="tns:IService1_GetAppartementsByProprietaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListeAppartement1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListeAppartement1" message="tns:IService1_GetListeAppartement1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListeAppartement1Response" message="tns:IService1_GetListeAppartement1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListeProprietaires_v1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListeProprietaires_v1" message="tns:IService1_GetListeProprietaires_v1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListeProprietaires_v1Response" message="tns:IService1_GetListeProprietaires_v1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListeAppartement_v1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListeAppartement_v1" message="tns:IService1_GetListeAppartement_v1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListeAppartement_v1Response" message="tns:IService1_GetListeAppartement_v1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListeLocataires">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListeLocataires" message="tns:IService1_GetListeLocataires_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListeLocatairesResponse" message="tns:IService1_GetListeLocataires_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AjouterLocataire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AjouterLocataire" message="tns:IService1_AjouterLocataire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AjouterLocataireResponse" message="tns:IService1_AjouterLocataire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifierLocataire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ModifierLocataire" message="tns:IService1_ModifierLocataire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ModifierLocataireResponse" message="tns:IService1_ModifierLocataire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerLocataire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SupprimerLocataire" message="tns:IService1_SupprimerLocataire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SupprimerLocataireResponse" message="tns:IService1_SupprimerLocataire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AjouterContratLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AjouterContratLocation" message="tns:IService1_AjouterContratLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AjouterContratLocationResponse" message="tns:IService1_AjouterContratLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifierContratLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ModifierContratLocation" message="tns:IService1_ModifierContratLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ModifierContratLocationResponse" message="tns:IService1_ModifierContratLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerContratLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SupprimerContratLocation" message="tns:IService1_SupprimerContratLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SupprimerContratLocationResponse" message="tns:IService1_SupprimerContratLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListeContrats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListeContrats" message="tns:IService1_GetListeContrats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListeContratsResponse" message="tns:IService1_GetListeContrats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContratById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetContratById" message="tns:IService1_GetContratById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetContratByIdResponse" message="tns:IService1_GetContratById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AjouterUtilisateur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AjouterUtilisateur" message="tns:IService1_AjouterUtilisateur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AjouterUtilisateurResponse" message="tns:IService1_AjouterUtilisateur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilisateurs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUtilisateurs" message="tns:IService1_GetUtilisateurs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUtilisateursResponse" message="tns:IService1_GetUtilisateurs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilisateurByIdentifiant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUtilisateurByIdentifiant" message="tns:IService1_GetUtilisateurByIdentifiant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUtilisateurByIdentifiantResponse" message="tns:IService1_GetUtilisateurByIdentifiant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAdmin" message="tns:IService1_GetAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAdminResponse" message="tns:IService1_GetAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateAdmin" message="tns:IService1_CreateAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateAdminResponse" message="tns:IService1_CreateAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ResetPassword" message="tns:IService1_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ResetPasswordResponse" message="tns:IService1_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EstEmailUnique">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EstEmailUnique" message="tns:IService1_EstEmailUnique_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EstEmailUniqueResponse" message="tns:IService1_EstEmailUnique_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EstIdentifiantUnique">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EstIdentifiantUnique" message="tns:IService1_EstIdentifiantUnique_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EstIdentifiantUniqueResponse" message="tns:IService1_EstIdentifiantUnique_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EstTelephoneUnique">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EstTelephoneUnique" message="tns:IService1_EstTelephoneUnique_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EstTelephoneUniqueResponse" message="tns:IService1_EstTelephoneUnique_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifierUtilisateur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerifierUtilisateur" message="tns:IService1_VerifierUtilisateur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerifierUtilisateurResponse" message="tns:IService1_VerifierUtilisateur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteDataError">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/WriteDataError" message="tns:IService1_WriteDataError_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/WriteDataErrorResponse" message="tns:IService1_WriteDataError_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAppartement">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddAppartement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppartement">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateAppartement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppartement">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteAppartement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppartementById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAppartementById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeAppartement">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListeAppartement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeProprietaires">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListeProprietaires" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterProprietaire">
+      <soap:operation soapAction="http://tempuri.org/IService1/AjouterProprietaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifierProprietaire">
+      <soap:operation soapAction="http://tempuri.org/IService1/ModifierProprietaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerProprietaire">
+      <soap:operation soapAction="http://tempuri.org/IService1/SupprimerProprietaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppartementsByProprietaire">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAppartementsByProprietaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeAppartement1">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListeAppartement1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeProprietaires_v1">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListeProprietaires_v1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeAppartement_v1">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListeAppartement_v1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeLocataires">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListeLocataires" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterLocataire">
+      <soap:operation soapAction="http://tempuri.org/IService1/AjouterLocataire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifierLocataire">
+      <soap:operation soapAction="http://tempuri.org/IService1/ModifierLocataire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerLocataire">
+      <soap:operation soapAction="http://tempuri.org/IService1/SupprimerLocataire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterContratLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/AjouterContratLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifierContratLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/ModifierContratLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerContratLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/SupprimerContratLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListeContrats">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListeContrats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContratById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetContratById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterUtilisateur">
+      <soap:operation soapAction="http://tempuri.org/IService1/AjouterUtilisateur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilisateurs">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUtilisateurs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilisateurByIdentifiant">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUtilisateurByIdentifiant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IService1/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstEmailUnique">
+      <soap:operation soapAction="http://tempuri.org/IService1/EstEmailUnique" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstIdentifiantUnique">
+      <soap:operation soapAction="http://tempuri.org/IService1/EstIdentifiantUnique" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstTelephoneUnique">
+      <soap:operation soapAction="http://tempuri.org/IService1/EstTelephoneUnique" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifierUtilisateur">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerifierUtilisateur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteDataError">
+      <soap:operation soapAction="http://tempuri.org/IService1/WriteDataError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:51198/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
